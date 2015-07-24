@@ -278,4 +278,3 @@ license.
 CUDPP also includes a modified version of FindGLEW.cmake from
 [nvidia-texture-tools](http://code.google.com/p/nvidia-texture-tools/),
 licensed under the [MIT license](http://www.opensource.org/licenses/mit-license.php).
-# cudpp
