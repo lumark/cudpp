@@ -42,7 +42,11 @@ set(CUFILES
   )
 
 set(HFILES_PUBLIC
-  ../../include/cudpp_hash.h
+  cudpp_hash.h
+  hash_table.cuh
+  hash_table.h
+  hash_functions.h
+  definitions.h
   )
 
 source_group("CUDA Source Files" FILES ${CUFILES})
@@ -145,7 +149,7 @@ cuda_add_library(cudpp_hash ${LIB_TYPE}
 target_link_libraries(cudpp_hash cudpp)
 
 install(FILES ${HFILES_PUBLIC}
-  DESTINATION include
+  DESTINATION include/cudpp
   )
 
 install(TARGETS cudpp_hash

@@ -424,6 +424,11 @@ int testHashTable(CUDPPHandle theCudpp, CUDPPHashTableType htt,
         }
         printf("\tHash table build: %f ms\n", timer.getTime());
         /// -----------------------------------------------------------
+        ///
+        ///
+        /// Now we can test retrive .
+        result = cudppHashRetrieve(hash_table_handle, d_test_keys,
+                                   d_test_vals, kInputSize);
 
         unsigned *sorted_values = NULL;
         if (htt == CUDPP_MULTIVALUE_HASH_TABLE) {

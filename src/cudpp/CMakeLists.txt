@@ -83,7 +83,7 @@ set(CUFILES
   )
 
 set(HFILES_PUBLIC
-  ${CMAKE_SOURCE_DIR}/include/cudpp.h
+  cudpp.h
   )
 
 source_group("CUDA Source Files" FILES ${CUFILES})
@@ -190,7 +190,7 @@ cuda_add_library(cudpp ${LIB_TYPE}
   )
 
 install(FILES ${HFILES_PUBLIC}
-  DESTINATION include
+  DESTINATION include/cudpp
   )
 
 install(TARGETS cudpp
