@@ -109,15 +109,6 @@ void CallHashRetrieve(const unsigned n_queries,
 #endif
 }
 
-void __device__
-CallHashRetrieveSingle(const unsigned *d_keys, const unsigned table_size,
-                       const Entry *d_contents, const Functions<2> constants_2,
-                       const uint2 stash_constants, const unsigned stash_count,
-                       unsigned *d_values) {
-  d_values[0] = retrieve(d_keys[0], table_size, d_contents, constants_2,
-                         stash_constants, stash_count);
-}
-
 // end of lines
 };  // namespace CUDAWrapper
 

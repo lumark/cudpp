@@ -228,12 +228,6 @@ void CallHashRetrieve(const unsigned n_queries,
                       const uint2 stash_constants, const unsigned stash_count,
                       unsigned *values_out);
 
-void __device__
-CallHashRetrieveSingle(const unsigned *d_keys, const unsigned table_size,
-                       const Entry *d_contents, const Functions<2> constants_2,
-                       const uint2 stash_constants, const unsigned stash_count,
-                       unsigned *d_values);
-
 // end of lines
 };
 /// @}
