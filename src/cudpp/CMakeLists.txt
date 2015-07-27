@@ -84,6 +84,7 @@ set(CUFILES
 
 set(HFILES_PUBLIC
   cudpp.h
+  cudpp_plan.h
   )
 
 source_group("CUDA Source Files" FILES ${CUFILES})

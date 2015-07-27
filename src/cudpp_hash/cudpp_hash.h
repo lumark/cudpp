@@ -110,12 +110,6 @@ CUDPP_DLL CUDPPResult cudppHashInsert(CUDPPHandle plan, const void *d_keys,
 CUDPP_DLL CUDPPResult cudppHashRetrieve(CUDPPHandle plan, const void *d_keys,
                                         void *d_vals, size_t num);
 
-#include "hash_functions.h"
-CUDPPResult cudppHashGetInfo(CUDPPHandle plan, unsigned *pTableSize,
-                             unsigned *pNumHashFuns, unsigned long long *pEntry,
-                             CudaHT::CuckooHashing::Functions<2> *pconstants_2,
-                             unsigned *pStashCount, uint2 *pStashConstants);
-
 CUDPP_DLL CUDPPResult
 cudppMultivalueHashGetValuesSize(CUDPPHandle plan, unsigned int *size);
 

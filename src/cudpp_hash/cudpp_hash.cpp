@@ -413,17 +413,6 @@ CUDPPResult cudppHashRetrieve(CUDPPHandle plan, const void *d_keys,
   return CUDPP_ERROR_ILLEGAL_CONFIGURATION;
 }
 
-CUDPP_DLL
-CUDPPResult cudppHashGetInfo(CUDPPHandle plan, unsigned *pTableSize,
-                             unsigned *pNumHashFuns, unsigned long long *pEntry,
-                             CudaHT::CuckooHashing::Functions<2> *pconstants_2,
-                             unsigned *pStashCount, uint2 *pStashConstants) {
-  hti_basic *hti = (hti_basic *)getPlanPtrFromHandle<hti_basic>(plan);
-  hti->hash_table->getAll(pTableSize, pNumHashFuns, pEntry, pconstants_2,
-                          pStashCount, pStashConstants);
-  return CUDPP_ERROR_ILLEGAL_CONFIGURATION;
-}
-
 /**
  * @brief Destroys a hash table given its handle.
  *

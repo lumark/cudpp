@@ -92,6 +92,7 @@ __device__ unsigned retrieve(const unsigned query_key,
                              const unsigned stash_count,
                              unsigned *num_probes_required = NULL) {
   // Identify all of the locations that the key can be located in.
+
   unsigned locations[kNumHashFunctions];
   KeyLocations(constants, table_size, query_key, locations);
 
@@ -130,15 +131,16 @@ __device__ unsigned retrieve(const unsigned query_key,
   }
 }
 
+template <unsigned kNumHashFunctions>
 inline void __device__
 CallHashRetrieveSingle(const unsigned *d_keys, const unsigned table_size,
-                       const Entry *d_contents, const Functions<2> constants_2,
+                       const Entry *d_contents,
+                       const Functions<kNumHashFunctions> constants,
                        const uint2 stash_constants, const unsigned stash_count,
                        unsigned *d_values) {
-  d_values[0] = retrieve(d_keys[0], table_size, d_contents, constants_2,
+  d_values[0] = retrieve(d_keys[0], table_size, d_contents, constants,
                          stash_constants, stash_count);
 }
-
 
 //! Perform a retrieval from a basic hash table.  Each thread manages a single
 // query.

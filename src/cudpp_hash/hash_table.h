@@ -167,17 +167,6 @@ class HashTable {
   //! Set the internal CUDPP instance
   inline void setTheCudpp(CUDPPHandle theCudpp_) { theCudpp = theCudpp_; }
 
-  inline void getAll(unsigned *pTableSize, unsigned *pNumHashFunctions,
-                     unsigned long long *pEntry, Functions<2> *pConstant_2,
-                     unsigned *pStashCount, uint2 *pStashConstants) {
-    pTableSize = &table_size_;
-    pNumHashFunctions = &num_hash_functions_;
-    pEntry = d_contents_;
-    pConstant_2 = &constants_2_;
-    pStashCount = &stash_count_;
-    pStashConstants = &stash_constants_;
-  }
-
   /// @}
 
  protected:
