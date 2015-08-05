@@ -138,34 +138,54 @@ class HashTable {
   /// @{
 
   //! Returns how many slots the hash table has.
-  inline unsigned get_table_size() const { return table_size_; }
+  inline __host__ __device__ unsigned get_table_size() const {
+    return table_size_;
+  }
 
   //! Returns how many items are stored in the stash.
-  inline unsigned get_stash_count() const { return stash_count_; }
+  inline __host__ __device__ unsigned get_stash_count() const {
+    return stash_count_;
+  }
 
   //! Returns the constants used by the stash.
-  inline uint2 get_stash_constants() const { return stash_constants_; }
+  inline __host__ __device__ uint2 get_stash_constants() const {
+    return stash_constants_;
+  }
 
   //! Returns the hash table contents.
-  inline const Entry *get_contents() const { return d_contents_; }
+  inline __host__ __device__ const Entry *get_contents() const {
+    return d_contents_;
+  }
 
   //! Returns the number of hash functions being used.
-  inline unsigned get_num_hash_functions() const { return num_hash_functions_; }
+  inline __host__ __device__ unsigned get_num_hash_functions() const {
+    return num_hash_functions_;
+  }
 
   //! When using two hash functions, returns the constants.
-  inline Functions<2> get_constants_2() const { return constants_2_; }
+  inline __host__ __device__ Functions<2> get_constants_2() const {
+    return constants_2_;
+  }
 
   //! When using three hash functions, returns the constants.
-  inline Functions<3> get_constants_3() const { return constants_3_; }
+  inline __host__ __device__ Functions<3> get_constants_3() const {
+    return constants_3_;
+  }
 
   //! When using four hash functions, returns the constants.
-  inline Functions<4> get_constants_4() const { return constants_4_; }
+  inline __host__ __device__ Functions<4> get_constants_4() const {
+    return constants_4_;
+  }
 
   //! When using five hash functions, returns the constants.
-  inline Functions<5> get_constants_5() const { return constants_5_; }
+  inline __host__ __device__ Functions<5> get_constants_5() const {
+    return constants_5_;
+  }
 
   //! Set the internal CUDPP instance
-  inline void setTheCudpp(CUDPPHandle theCudpp_) { theCudpp = theCudpp_; }
+  inline __host__ __device__ void setTheCudpp(CUDPPHandle theCudpp_) {
+    theCudpp = theCudpp_;
+  }
 
   /// @}
 
