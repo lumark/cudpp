@@ -41,12 +41,14 @@ set(CUFILES
   hash_functions.cu
   )
 
+## here define which files we want to explore
 set(HFILES_PUBLIC
   cudpp_hash.h
   hash_table.cuh
   hash_table.h
   hash_functions.h
   definitions.h
+  hash_multivalue.h
   )
 
 source_group("CUDA Source Files" FILES ${CUFILES})
